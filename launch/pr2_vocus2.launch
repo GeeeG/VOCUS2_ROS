@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="vocus2" pkg="vocus2_ros" type="vocus2_ros_node">
+    <remap from="image_in" to="wide_stereo/left/image_color" />
+    <remap from="image_out" to="most_salient_region" />
+  </node>
+  <param name="vocus2/fuse_feature" value="3"/>
+  <param name="vocus2/fuse_conspicuity" value="3"/>
+  <param name="vocus2/intensity_on_off_weight" value="0.0"/>
+  <param name="vocus2/intensity_off_on_weight" value="0.0"/>
+
+  <node name="look_around" pkg="vocus2_ros" type="pr2_look_around.py" />
+</launch>
